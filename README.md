@@ -1,4 +1,5 @@
-# Qwik adc-qwik ⚡️
+# Qwik Demos for the Atlanta Developer Conference
+
 
 - File based routing and MDX support
 - Vite.js tooling.
