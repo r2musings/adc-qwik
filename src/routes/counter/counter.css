@@ -1,0 +1,30 @@
+.counter-root {
+    display: flex;
+    flex-direction: column;
+}
+
+.counter-root button {
+    width: 200px;
+    font-size: 20px;
+    height: 45px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #CCC;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.counter-root .count-display {
+    font-size: 20px;
+}
+
+.counter-child {
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #333;
+    background-color: #666;
+    color: #FFF;
+    max-width: 400px;
+}
+
