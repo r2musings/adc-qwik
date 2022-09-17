@@ -6,6 +6,15 @@ export default component$(() => {
     <div>
       <ul>
         <li>
+          <a href="/all">Kitchen Sink</a>
+        </li>
+        <li>
+          <a href="/todo">To Do</a>
+        </li>
+        <li>
+          <a href="/family">Family Affair</a>
+        </li>
+        {/* <li>
           <a href="/counter">Counter</a>
         </li>
         <li>
@@ -13,16 +22,7 @@ export default component$(() => {
         </li>
         <li>
           <a href="/photos">Photos</a>
-        </li>
-        <li>
-          <a href="/todo">To do</a>
-        </li>
-        <li>
-          <a href="/family">Family</a>
-        </li>
-        <li>
-          <a href="/all">All</a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

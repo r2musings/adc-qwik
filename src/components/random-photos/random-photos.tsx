@@ -25,6 +25,8 @@ export const RandomPhotos = component$((props: { imageCount?: number }) => {
 
   useStyles$(styles);
 
+  console.log("Render RandomPhoto");
+
   const defaultSpecs: ImageSpec[] = [];
   const store = useStore({
     imageSpecs: defaultSpecs,
@@ -66,6 +68,8 @@ export const Photo = component$((props: { imageSpec: ImageSpec }) => {
   const { name, width, height, category, filter } = props.imageSpec;
   const imageRef = useRef();
   useStyles$(styles);
+
+  console.log("Render Photo");
 
   const store = useStore({
     url: undefined as string | undefined,

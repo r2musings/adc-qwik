@@ -22,13 +22,13 @@ img {
   display: flex;
   flex-direction: column;
   background-color: #888;
-  color: 
 }
-
 
 .pixel {
   /* width: 200px;
   height: 200px; */
+  padding: 10px;
+  width: 150px;
   border: 1px solid #999;
   background-color: red;
 }
@@ -36,6 +36,7 @@ img {
 .cheeto {
   /* width: 200px;
   height: 200px; */
+  width: 150px;
   border: 1px solid #999;
   background-color: green;
 }
@@ -43,6 +44,7 @@ img {
 .smoky {
   /* width: 200px;
   height: 200px; */
+  width: 150px;
   border: 1px solid #999;
   background-color: blue;
 }

@@ -2,11 +2,14 @@ import { component$, useStore, useStyles$ } from "@builder.io/qwik";
 import styles from "./button-bunch.css?inline";
 
 export const ButtonBunch = component$((props: { buttonCount?: number }) => {
+  useStyles$(styles);
+
   const count = props.buttonCount || 50;
   const items = new Array(count)
     .fill(null)
     .map((_, index) => `Button ${index + 1}`);
-  useStyles$(styles);
+
+  console.log("Render ButtonBunch");
 
   return (
     <div>
@@ -24,8 +27,10 @@ export const ButtonBunch = component$((props: { buttonCount?: number }) => {
 export const CounterButton = component$((props: { title: string }) => {
   useStyles$(styles);
 
-  const store = useStore({ count: 123 });
-  console.log("Render CounterRoot");
+  const store = useStore({ count: 0 });
+
+  console.log("Render CounterButton");
+
   return (
     <div class="counter-root">
       <p>
@@ -53,10 +58,4 @@ export const CountDisplay = component$(
   }
 );
 
-
-
-
-
-export const Foo = () => {
-  
-}
+export const Foo = () => {};

@@ -101,11 +101,8 @@ export const GrandParents = component$((props: { counts: CountProps }) => {
         props.counts.grandParentCount = props.counts.grandParentCount + 2;
       }}
       onClick$={(evt) => {
-        console.log("evt.bubbles: " + evt.bubbles);
         evt.stopPropagation();
         props.counts.grandParentCount++;
-        console.log("evt.bubbles: " + evt.bubbles);
-        console.log("evt.cancelBubble: " + evt.cancelBubble);
       }}
       preventdefault:contextmenu
     >
@@ -160,10 +157,12 @@ export const Rik = component$((props: { counts: CountProps }) => {
         <CirclePhoto src="/images/rik.jpg" />
         <p>Rik Count: {props.counts.rikCount}</p>
       </div>
-
-      <CheetoCat counts={props.counts} />
-      <PixelCat counts={props.counts} />
-      <SmokyCat counts={props.counts} />
+      
+      <div class="flex-row">
+        <PixelCat counts={props.counts} />
+        <CheetoCat counts={props.counts} />
+        <SmokyCat counts={props.counts} />
+      </div>
     </div>
   );
 });
@@ -178,9 +177,9 @@ export const PixelCat = component$((props: { counts: CountProps }) => {
         props.counts.pixelCount++;
       }}
     >
-      <div class="flex-row">
-        <CirclePhoto src="/images/pixel.png" />
-        <p>Pixel Count: {props.counts.pixelCount}</p>
+      <div>
+        <CirclePhoto src="/images/pixel.png" /><br/>
+        <p>Pixel: {props.counts.pixelCount}</p>
       </div>
     </div>
   );
@@ -196,9 +195,9 @@ export const CheetoCat = component$((props: { counts: CountProps }) => {
         props.counts.cheetoCount++;
       }}
     >
-      <div class="flex-row">
-        <CirclePhoto src="/images/cheeto.png" />
-        <p>Cheeto Count: {props.counts.cheetoCount}</p>
+      <div>
+        <CirclePhoto src="/images/cheeto.png" /><br/>
+        <p>Cheeto: {props.counts.cheetoCount}</p>
       </div>
     </div>
   );
@@ -214,9 +213,9 @@ export const SmokyCat = component$((props: { counts: CountProps }) => {
         props.counts.smokyCount++;
       }}
     >
-      <div class="flex-row">
-        <CirclePhoto src="/images/smoky.png" />
-        <p>Smoky Count: {props.counts.smokyCount}</p>
+      <div>
+        <CirclePhoto src="/images/smoky.png" /><br/>
+        <p>Smoky: {props.counts.smokyCount}</p>
       </div>
     </div>
   );
