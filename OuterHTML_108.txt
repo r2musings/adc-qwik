@@ -1,0 +1,1087 @@
+<html q:container="paused" q:version="0.0.108" q:render="ssr-dev" q:base="/build/"><!--qv q:id=0 q:key=1WfQ2nWuNlM:--><!--qv q:id=1 q:key=z1nvHyEppoI:--><!--qv q:s q:sref=1 q:key--><!--qv q:id=q q:key=3XhKeQX9M0U:--><head q:head=""><meta charset="utf-8" q:head=""><title q:head="">Qwik</title><meta name="viewport" content="width=device-width, initial-scale=1.0" q:head=""><link rel="canonical" href="http://localhost:5173/todo" q:head=""><meta property="og:site_name" content="Qwik" q:head=""><meta name="twitter:card" content="summary_large_image" q:head=""><meta name="twitter:site" content="@QwikDev" q:head=""><meta name="twitter:title" content="Qwik" q:head=""><script q:head="">console.log("🧨 Analytics! /todo");</script><link rel="stylesheet" href="/src/global.css"><link rel="stylesheet" href="/src/routes/todo/index.css"><link rel="stylesheet" href="/@fs/C:/Source/Repos/adc-qwik/src/routes/todo/base.css"><style q:style="2gkvmb-0">header {
+  background-color: #0093ee;
+}
+
+header .header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.full-screen header .header-inner {
+  max-width: 100%;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+header a:hover {
+  background-color: #ffffff50;
+}
+
+header .active {
+  background-color: #ffffff30;
+}
+
+.theme-toggle {
+  background: transparent;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-light .theme-toggle::before {
+  content: '☽';
+}
+
+.theme-dark .theme-toggle::before {
+  content: '☀';
+}
+</style><style q:style="lta4vf-0">hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px dashed #c5c5c5;
+  border-bottom: 1px dashed #f7f7f7;
+}
+
+.learn a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #b83f45;
+}
+
+.learn a:hover {
+  text-decoration: underline;
+  color: #787e7e;
+}
+
+.learn h3,
+.learn h4,
+.learn h5 {
+  margin: 10px 0;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000;
+}
+
+.learn h3 {
+  font-size: 24px;
+}
+
+.learn h4 {
+  font-size: 18px;
+}
+
+.learn h5 {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.learn ul {
+  padding: 0;
+  margin: 0 0 30px 25px;
+}
+
+.learn li {
+  line-height: 20px;
+}
+
+.learn p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#issue-count {
+  display: none;
+}
+
+.quote {
+  border: none;
+  margin: 20px 0 60px 0;
+}
+
+.quote p {
+  font-style: italic;
+}
+
+.quote p:before {
+  content: "“";
+  font-size: 50px;
+  opacity: 0.15;
+  position: absolute;
+  top: -20px;
+  left: 3px;
+}
+
+.quote p:after {
+  content: "”";
+  font-size: 50px;
+  opacity: 0.15;
+  position: absolute;
+  bottom: -42px;
+  right: 3px;
+}
+
+.quote footer {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+}
+
+.quote footer img {
+  border-radius: 3px;
+}
+
+.quote footer a {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.speech-bubble {
+  position: relative;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 30px;
+  border: 13px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.04);
+}
+
+.learn-bar > .learn {
+  position: absolute;
+  width: 272px;
+  top: 8px;
+  left: -300px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition-property: left;
+  transition-duration: 500ms;
+}
+
+@media (min-width: 899px) {
+  .learn-bar {
+    width: auto;
+    padding-left: 300px;
+  }
+
+  .learn-bar > .learn {
+    left: 8px;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #f5f5f5;
+  color: #111111;
+  /* min-width: 230px;
+  max-width: 550px; */
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+}
+
+:focus {
+  outline: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.todoapp {
+  background: #fff;
+  margin: 130px 0 40px 0;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.todoapp input::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.todoapp input::-moz-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.todoapp input::input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.todoapp h1 {
+  position: absolute;
+  top: -140px;
+  width: 100%;
+  font-size: 80px;
+  font-weight: 200;
+  text-align: center;
+  color: #b83f45;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
+.new-todo,
+.edit {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  color: #FFF;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+}
+
+.toggle-all {
+  width: 1px;
+  height: 1px;
+  border: none; /* Mobile Safari */
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  bottom: 100%;
+}
+
+.toggle-all + label {
+  width: 60px;
+  height: 34px;
+  font-size: 0;
+  position: absolute;
+  top: -52px;
+  left: -13px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.toggle-all + label:before {
+  content: "❯";
+  font-size: 22px;
+  color: #e6e6e6;
+  padding: 10px 27px 10px 27px;
+}
+
+.toggle-all:checked + label:before {
+  color: #737373;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.todo-list li.editing {
+  border-bottom: none;
+  padding: 0;
+}
+
+.todo-list li.editing .edit {
+  display: block;
+  width: calc(100% - 43px);
+  padding: 12px 16px;
+  margin: 0 0 0 43px;
+}
+
+.todo-list li.editing .view {
+  display: none;
+}
+
+.todo-list li .toggle {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.todo-list li .toggle {
+  opacity: 0;
+}
+
+.todo-list li .toggle + label {
+  /*
+		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
+		IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
+	*/
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.todo-list li .toggle:checked + label {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E");
+}
+
+.todo-list li label {
+  word-break: break-all;
+  padding: 15px 15px 15px 60px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+  font-weight: 400;
+  color: #4d4d4d;
+}
+
+.todo-list li.completed label {
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
+.todo-list li .destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+.todo-list li .destroy:hover {
+  color: #af5b5e;
+}
+
+.todo-list li .destroy:after {
+  content: "×";
+}
+
+.todo-list li:hover .destroy {
+  display: block;
+}
+
+.todo-list li .edit {
+  display: none;
+}
+
+.todo-list li.editing:last-child {
+  margin-bottom: -1px;
+}
+
+.footer {
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  font-size: 15px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footer:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6,
+    0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+.todo-count {
+  float: left;
+  text-align: left;
+}
+
+.todo-count strong {
+  font-weight: 300;
+}
+
+.filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.filters li {
+  display: inline;
+}
+
+.filters li a {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.filters li a:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+.filters li a.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.clear-completed,
+html .clear-completed:active {
+  float: right;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clear-completed:hover {
+  text-decoration: underline;
+}
+
+.info {
+  margin: 65px auto 0;
+  color: #4d4d4d;
+  font-size: 11px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.info p {
+  line-height: 1;
+}
+
+.info a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+/*
+	Hack to remove background from Mobile Safari.
+	Can't use it globally since it destroys checkboxes in Firefox
+*/
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .toggle-all,
+  .todo-list li .toggle {
+    background: none;
+  }
+
+  .todo-list li .toggle {
+    height: 40px;
+  }
+}
+
+@media (max-width: 430px) {
+  .footer {
+    height: 50px;
+  }
+
+  .filters {
+    bottom: 10px;
+  }
+}
+</style></head><!--/qv--><body lang="en"><!--qv q:id=2 q:key=nd8yk3KO22c:--><!--qv q:id=3 q:key=H0cen0tro7k:--><div><!--qv q:id=p q:key=f8xJ03Ou5Lc:--><header><div class="header-inner"><section class="logo"><a href="/">Qwik JS Demos - AtlDevCon</a></section></div></header><!--/qv--><main><!--qv q:s q:sref=3 q:key--><!--qv q:id=4 q:key=CO1E0mCPrTI:--><section class="todoapp"><!--qv q:id=6 q:key=WSi00lEfPaU:--><header><h1>todos</h1><input class="new-todo" placeholder="What needs to be done?" value="" q:id="7" on:keyup="/src/header_component_header_input_onkeyup_5x7gybyca4y.js#Header_component_header_input_onKeyup_5x7gYbYcA4Y[0 1]"></header><!--/qv--><!--qv q:id=5 q:key=tNpRwICn0rs:--><div class="main"><ul class="todo-list"><!--qv q:id=d q:key=YjryiwfoEUo:Read+Qwik+docs--><li><div class="view"><input class="toggle" type="checkbox" q:id="e" on:click="/src/item_component_li_div_input_onclick_vtjjzuf6wlq.js#Item_component_li_div_input_onClick_vtjJzuf6wLQ[0]"><label q:id="f" on:dblclick="/src/item_component_li_div_label_ondblclick_dvl6thmmyle.js#Item_component_li_div_label_onDblclick_DVL6tHMmYLE[0]">Read Qwik docs</label><button class="destroy" q:id="g" on:click="/src/item_component_li_div_button_onclick_bk1jypm1l08.js#Item_component_li_div_button_onClick_Bk1JypM1L08[0 1]"></button></div></li><!--/qv--><!--qv q:id=h q:key=YjryiwfoEUo:Build+HelloWorld--><li><div class="view"><input class="toggle" type="checkbox" q:id="i" on:click="/src/item_component_li_div_input_onclick_vtjjzuf6wlq.js#Item_component_li_div_input_onClick_vtjJzuf6wLQ[0]"><label q:id="j" on:dblclick="/src/item_component_li_div_label_ondblclick_dvl6thmmyle.js#Item_component_li_div_label_onDblclick_DVL6tHMmYLE[0]">Build HelloWorld</label><button class="destroy" q:id="k" on:click="/src/item_component_li_div_button_onclick_bk1jypm1l08.js#Item_component_li_div_button_onClick_Bk1JypM1L08[0 1]"></button></div></li><!--/qv--><!--qv q:id=l q:key=YjryiwfoEUo:Profit--><li><div class="view"><input class="toggle" type="checkbox" q:id="m" on:click="/src/item_component_li_div_input_onclick_vtjjzuf6wlq.js#Item_component_li_div_input_onClick_vtjJzuf6wLQ[0]"><label q:id="n" on:dblclick="/src/item_component_li_div_label_ondblclick_dvl6thmmyle.js#Item_component_li_div_label_onDblclick_DVL6tHMmYLE[0]">Profit</label><button class="destroy" q:id="o" on:click="/src/item_component_li_div_button_onclick_bk1jypm1l08.js#Item_component_li_div_button_onClick_Bk1JypM1L08[0 1]"></button></div></li><!--/qv--><!--qv q:key=YjryiwfoEUo:123 q:id=r--><li class=""><div class="view"><input q:id="s" class="toggle" type="checkbox" on:click="/src/item_component_li_div_input_onclick_vtjjzuf6wlq.js#Item_component_li_div_input_onClick_vtjJzuf6wLQ[0]"><label q:id="t" on:dblclick="/src/item_component_li_div_label_ondblclick_dvl6thmmyle.js#Item_component_li_div_label_onDblclick_DVL6tHMmYLE[0]">123</label><button q:id="u" class="destroy" on:click="/src/item_component_li_div_button_onclick_bk1jypm1l08.js#Item_component_li_div_button_onClick_Bk1JypM1L08[0 1]"></button></div></li><!--/qv--><!--qv q:key=YjryiwfoEUo:456 q:id=v--><li class=""><div class="view"><input q:id="w" class="toggle" type="checkbox" on:click="/src/item_component_li_div_input_onclick_vtjjzuf6wlq.js#Item_component_li_div_input_onClick_vtjJzuf6wLQ[0]"><label q:id="x" on:dblclick="/src/item_component_li_div_label_ondblclick_dvl6thmmyle.js#Item_component_li_div_label_onDblclick_DVL6tHMmYLE[0]">456</label><button q:id="y" class="destroy" on:click="/src/item_component_li_div_button_onclick_bk1jypm1l08.js#Item_component_li_div_button_onClick_Bk1JypM1L08[0 1]"></button></div></li><!--/qv--></ul></div><!--/qv--><!--qv q:id=8 q:key=Yz33SVmzXes:--><footer class="footer"><span class="todo-count"><strong>5</strong> items left</span><ul class="filters"><li><a class="selected" q:id="9" on:click="/src/footer_component_filter_li_a_onclick_280qthbwa7q.js#Footer_component_Filter_li_a_onClick_280QthbwA7Q[0 1]">All</a></li><li><a q:id="a" on:click="/src/footer_component_filter_li_a_onclick_280qthbwa7q.js#Footer_component_Filter_li_a_onClick_280QthbwA7Q[0 1]" class="">Active</a></li><li><a q:id="b" on:click="/src/footer_component_filter_li_a_onclick_280qthbwa7q.js#Footer_component_Filter_li_a_onClick_280QthbwA7Q[0 1]" class="">Completed</a></li></ul><button class="clear-completed" q:id="c" on:click="/src/footer_component_footer__fragment_button_onclick_cb3v4obn9iu.js#Footer_component_footer__Fragment_button_onClick_CB3V4obn9iU[0]">Clear completed</button></footer><!--/qv--></section><!--/qv--><!--/qv--></main></div><!--/qv--><!--/qv--><script id="qwikloader">(() => {
+    function findModule(module) {
+        return Object.values(module).find(isModule) || module;
+    }
+    function isModule(module) {
+        return "object" == typeof module && module && "Module" === module[Symbol.toStringTag];
+    }
+    ((doc, hasInitialized) => {
+        const broadcast = (infix, type, ev) => {
+            type = type.replace(/([A-Z])/g, (a => "-" + a.toLowerCase()));
+            doc.querySelectorAll("[on" + infix + "\\:" + type + "]").forEach((target => dispatch(target, infix, type, ev)));
+        };
+        const emitEvent = (el, eventName, detail) => el.dispatchEvent(new CustomEvent(eventName, {
+            detail: detail,
+            bubbles: !0,
+            composed: !0
+        }));
+        const error = msg => {
+            throw new Error("QWIK " + msg);
+        };
+        const qrlResolver = (element, qrl) => {
+            element = element.closest("[q\\:container]");
+            return new URL(qrl, new URL(element ? element.getAttribute("q:base") : doc.baseURI, doc.baseURI));
+        };
+        const dispatch = async (element, onPrefix, eventName, ev) => {
+            var _a;
+            element.hasAttribute("preventdefault:" + eventName) && ev.preventDefault();
+            const attrName = "on" + onPrefix + ":" + eventName;
+            const qrls = null == (_a = element._qc_) ? void 0 : _a.li[attrName];
+            if (qrls) {
+                qrls.forEach((q => q.getFn([ element, ev ], (() => element.isConnected))(ev, element)));
+                return;
+            }
+            const attrValue = element.getAttribute(attrName);
+            if (attrValue) {
+                for (const qrl of attrValue.split("\n")) {
+                    const url = qrlResolver(element, qrl);
+                    if (url) {
+                        const symbolName = getSymbolName(url);
+                        const handler = (window[url.pathname] || findModule(await import(url.href.split("#")[0])))[symbolName] || error(url + " does not export " + symbolName);
+                        const previousCtx = doc.__q_context__;
+                        if (element.isConnected) {
+                            try {
+                                doc.__q_context__ = [ element, ev, url ];
+                                handler(ev, element);
+                            } finally {
+                                doc.__q_context__ = previousCtx;
+                                emitEvent(element, "qsymbol", symbolName);
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        const getSymbolName = url => url.hash.replace(/^#?([^?[|]*).*$/, "$1") || "default";
+        const processDocumentEvent = ev => {
+            let element = ev.target;
+            broadcast("-document", ev.type, ev);
+            while (element && element.getAttribute) {
+                dispatch(element, "", ev.type, ev);
+                element = ev.bubbles ? element.parentElement : null;
+            }
+        };
+        const processWindowEvent = ev => {
+            broadcast("-window", ev.type, ev);
+        };
+        const processReadyStateChange = () => {
+            const readyState = doc.readyState;
+            if (!hasInitialized && ("interactive" == readyState || "complete" == readyState)) {
+                hasInitialized = 1;
+                broadcast("", "qinit", new CustomEvent("qinit"));
+                if ("undefined" != typeof IntersectionObserver) {
+                    const observer = new IntersectionObserver((entries => {
+                        for (const entry of entries) {
+                            if (entry.isIntersecting) {
+                                observer.unobserve(entry.target);
+                                dispatch(entry.target, "", "qvisible", new CustomEvent("qvisible", {
+                                    bubbles: !1,
+                                    detail: entry
+                                }));
+                            }
+                        }
+                    }));
+                    doc.qO = observer;
+                    doc.querySelectorAll("[on\\:qvisible]").forEach((el => observer.observe(el)));
+                }
+            }
+        };
+        const addDocEventListener = eventName => {
+            document.addEventListener(eventName, processDocumentEvent, {
+                capture: !0
+            });
+            window.addEventListener(eventName, processWindowEvent);
+        };
+        if (!doc.qR) {
+            doc.qR = 1;
+            {
+                const scriptTag = doc.querySelector("script[events]");
+                if (scriptTag) {
+                    scriptTag.getAttribute("events").split(/[\s,;]+/).forEach(addDocEventListener);
+                } else {
+                    for (const key in doc) {
+                        key.startsWith("on") && addDocEventListener(key.slice(2));
+                    }
+                }
+            }
+            doc.addEventListener("readystatechange", processReadyStateChange);
+            processReadyStateChange();
+        }
+    })(document);
+})();</script><div style="position: static !important;"></div><script type="module" src="/@vite/client"></script><script type="qwik/json">{
+  "ctx": {
+    "#1": {
+      "c": "qc-c=1i! qc-ic=1j! qc-h=1k! qc-l=1o! qc-n=1t!"
+    },
+    "#4": {
+      "c": "-todo-app=2!"
+    },
+    "#6": {
+      "h": "0! q",
+      "s": "1! 2!"
+    },
+    "#7": {
+      "r": "1! 2!"
+    },
+    "#5": {
+      "h": "9! z",
+      "s": "2!"
+    },
+    "#d": {
+      "h": "b! 11",
+      "w": "13",
+      "s": "c! d! 2! 12"
+    },
+    "#e": {
+      "r": "b!"
+    },
+    "#f": {
+      "r": "c!"
+    },
+    "#g": {
+      "r": "b! 2!"
+    },
+    "#h": {
+      "h": "e! 11",
+      "w": "17",
+      "s": "f! g! 2! 12"
+    },
+    "#i": {
+      "r": "e!"
+    },
+    "#j": {
+      "r": "f!"
+    },
+    "#k": {
+      "r": "e! 2!"
+    },
+    "#l": {
+      "h": "h! 11",
+      "w": "19",
+      "s": "i! j! 2! 12"
+    },
+    "#m": {
+      "r": "h!"
+    },
+    "#n": {
+      "r": "i!"
+    },
+    "#o": {
+      "r": "h! 2!"
+    },
+    "#r": {
+      "h": "k! 1b",
+      "w": "1c",
+      "s": "l! m! 2! 12"
+    },
+    "#s": {
+      "r": "k!"
+    },
+    "#t": {
+      "r": "l!"
+    },
+    "#u": {
+      "r": "k! 2!"
+    },
+    "#v": {
+      "h": "n! 1b",
+      "w": "1e",
+      "s": "o! p! 2! 12"
+    },
+    "#w": {
+      "r": "n!"
+    },
+    "#x": {
+      "r": "o!"
+    },
+    "#y": {
+      "r": "n! 2!"
+    },
+    "#8": {
+      "h": "a! 10",
+      "s": "2!"
+    },
+    "#9": {
+      "r": "s 2!"
+    },
+    "#a": {
+      "r": "1g 2!"
+    },
+    "#b": {
+      "r": "1h 2!"
+    },
+    "#c": {
+      "r": "2!"
+    }
+  },
+  "objs": [
+    {},
+    {
+      "text": "r"
+    },
+    {
+      "filter": "s",
+      "items": "3"
+    },
+    [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    {
+      "completed": "t",
+      "title": "u"
+    },
+    {
+      "completed": "t",
+      "title": "v"
+    },
+    {
+      "completed": "t",
+      "title": "w"
+    },
+    {
+      "completed": "t",
+      "title": "x"
+    },
+    {
+      "completed": "t",
+      "title": "y"
+    },
+    {},
+    {},
+    {
+      "item": "4!"
+    },
+    {
+      "editing": "t"
+    },
+    {
+      "current": "1u"
+    },
+    {
+      "item": "5!"
+    },
+    {
+      "editing": "t"
+    },
+    {
+      "current": "1u"
+    },
+    {
+      "item": "6!"
+    },
+    {
+      "editing": "t"
+    },
+    {
+      "current": "1u"
+    },
+    {
+      "item": "7!"
+    },
+    {
+      "editing": "t"
+    },
+    {
+      "current": "1u"
+    },
+    {
+      "item": "8!"
+    },
+    {
+      "editing": "t"
+    },
+    {
+      "current": "1u"
+    },
+    "\u0002/src/header_component_wsi00lefpau.js#Header_component_WSi00lEfPaU",
+    "",
+    "all",
+    false,
+    "Read Qwik docs",
+    "Build HelloWorld",
+    "Profit",
+    "123",
+    "456",
+    "\u0002/src/body_component_tnprwicn0rs.js#Body_component_tNpRwICn0rs",
+    "\u0002/src/footer_component_yz33svmzxes.js#Footer_component_Yz33SVmzXes",
+    "\u0002/src/item_component_yjryiwfoeuo.js#Item_component_YjryiwfoEUo",
+    true,
+    "\u00032 3 16 #d",
+    2,
+    3,
+    "\u0002/src/item_component_usewatch_9bwrjc00o1m.js#Item_component_useWatch_9BWrJC00O1M[d!]",
+    "\u00032 3 18 #h",
+    "\u0002/src/item_component_usewatch_9bwrjc00o1m.js#Item_component_useWatch_9BWrJC00O1M[g!]",
+    "\u00032 3 1a #l",
+    "\u0002/src/item_component_usewatch_9bwrjc00o1m.js#Item_component_useWatch_9BWrJC00O1M[j!]",
+    "\u0002/src/item_component_yjryiwfoeuo.js#Item_component_YjryiwfoEUo",
+    "\u00032 3 1d #r",
+    "\u0002/src/item_component_usewatch_9bwrjc00o1m.js#Item_component_useWatch_9BWrJC00O1M[m!]",
+    "\u00032 3 1f #v",
+    "\u0002/src/item_component_usewatch_9bwrjc00o1m.js#Item_component_useWatch_9BWrJC00O1M[p!]",
+    "active",
+    "completed",
+    {
+      "headings": "1u",
+      "menu": "1u"
+    },
+    {
+      "contents": "1u"
+    },
+    {
+      "title": "r",
+      "meta": "1l",
+      "links": "1m",
+      "styles": "1n"
+    },
+    [],
+    [],
+    [],
+    {
+      "href": "1p",
+      "pathname": "1q",
+      "query": "1r",
+      "params": "1s"
+    },
+    "http://localhost:5173/todo",
+    "/todo",
+    {},
+    {},
+    {
+      "path": "1q"
+    },
+    "\u0001"
+  ],
+  "subs": [
+    {
+      "$": 2
+    },
+    {
+      "#6": [
+        "text"
+      ]
+    },
+    {
+      "$": 1,
+      "#5": [
+        "items",
+        "filter"
+      ],
+      "#8": [
+        "items",
+        "filter"
+      ]
+    },
+    {
+      "$": 1,
+      "#5": null,
+      "#8": null
+    },
+    {
+      "$": 1,
+      "#d": [
+        "completed",
+        "title"
+      ],
+      "#5": [
+        "title"
+      ],
+      "#8": [
+        "completed"
+      ]
+    },
+    {
+      "$": 1,
+      "#h": [
+        "completed",
+        "title"
+      ],
+      "#5": [
+        "title"
+      ],
+      "#8": [
+        "completed"
+      ]
+    },
+    {
+      "$": 1,
+      "#l": [
+        "completed",
+        "title"
+      ],
+      "#5": [
+        "title"
+      ],
+      "#8": [
+        "completed"
+      ]
+    },
+    {
+      "$": 1,
+      "#r": [
+        "completed",
+        "title"
+      ],
+      "#5": [
+        "title"
+      ],
+      "#8": [
+        "completed"
+      ]
+    },
+    {
+      "$": 1,
+      "#5": [
+        "title"
+      ],
+      "#v": [
+        "completed",
+        "title"
+      ],
+      "#8": [
+        "completed"
+      ]
+    },
+    {
+      "$": 2
+    },
+    {
+      "$": 2
+    },
+    {
+      "$": 2
+    },
+    {
+      "#d": [
+        "editing"
+      ]
+    },
+    {
+      "13": [
+        "current"
+      ]
+    },
+    {
+      "$": 2
+    },
+    {
+      "#h": [
+        "editing"
+      ]
+    },
+    {
+      "17": [
+        "current"
+      ]
+    },
+    {
+      "$": 2
+    },
+    {
+      "#l": [
+        "editing"
+      ]
+    },
+    {
+      "19": [
+        "current"
+      ]
+    },
+    {
+      "$": 2
+    },
+    {
+      "#r": [
+        "editing"
+      ]
+    },
+    {
+      "1c": [
+        "current"
+      ]
+    },
+    {
+      "$": 2
+    },
+    {
+      "#v": [
+        "editing"
+      ]
+    },
+    {
+      "1e": [
+        "current"
+      ]
+    }
+  ]
+}</script></body><!--/qv--><!--/qv--><!--/qv--></html>
